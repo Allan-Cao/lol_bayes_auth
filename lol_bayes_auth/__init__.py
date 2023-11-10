@@ -1,0 +1,1 @@
+from lol_bayes_auth.auth import BayesAuth

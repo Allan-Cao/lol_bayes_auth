@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "lol_bayes_auth"
+version = "0.1.2"
+description = "Simple authentication package for the Bayes Esports API"
+authors = ["Allan Cao <allan@allancao.ca>"]
+license = "GPL-3.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests = "^2.31.0"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.3"
+requests-mock = "^1.11.0"
+black = "^23.11.0"
+freezegun = "^1.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
