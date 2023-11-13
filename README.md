@@ -1,5 +1,6 @@
 # lol_bayes_auth
 ![](https://github.com/Allan-Cao/lol_bayes_auth/actions/workflows/python-app.yml/badge.svg)
+
 Simple authentication package for the Bayes Esports API
 
 ## Install
