@@ -63,3 +63,11 @@ class BayesAuth:
         if self._token is None or self._token_refresh_required():
             return self._portal_login()
         return self._token
+    
+    def get_headers(self) -> dict:
+        """Get and return a dictionary containing an Authorization header with the user's Bayes API access token.
+
+        :return: A dictionary containing an Authorization header with the user's Bayes API access token
+        :rtype: dict
+        """
+        return {"Authorization": f"Bearer {self.get_token()}"}

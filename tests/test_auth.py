@@ -69,3 +69,11 @@ def test_get_token_does_not_call_api_with_fresh_token(requests_mock):
         frozen_datetime.tick(delta=datetime.timedelta(hours=2))
         auth.get_token()
         assert requests_mock.call_count == 2
+
+def test_header_returns_properly_formatted_dictionary(requests_mock):
+    auth = BayesAuth('username', 'password')
+    requests_mock.post(auth.auth_url, json={'accessToken': 'test_token', 'expiresIn': 36000})
+    request_header = auth.get_headers()
+    
+    assert 'Authorization' in request_header.keys()
+    assert request_header.get('Authorization') == 'Bearer test_token'
